@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #201F10;
+            color: white;
+        }
+
+        /* NAVIGATION */
+        header {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #101820;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #263746;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #0092D9;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #0092d9;
+        }
+
+        section {
+            padding: 100px 8%;
+            scroll-margin-top: 60px;
+        }
+
+        /* ABOUT ME */
+        #about {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .about-text {
+            max-width: 600px;
+        }
+
+        .about-text h4 {
+            color: #0092d9;
+            font-size: 18px;
+        }
+
+        .about-text h1 {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+
+        .about-text h2 {
+            color: #0992d9;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #b8c4cc;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .about-image img {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid #0092d9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #0092d9;
+            color: #101820;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #0092d9;
+        }
+
+        /* SKILLS */
+        #skills, #contacts {
+            background: #16232e;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #20313e;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #0092d9;
+        }
+
+        .skill-card h3 {
+            color: #0092d9;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #b8c4cc;
+        }
+
+        /* EDUCATION */
+        .education-container {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: #20313e;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0092d9;
+            border-radius: 8px;
+        }
+
+        .education-card h3 {
+            color: #0092d9;
+            margin: 5px 0;
+        }
+
+        .education-card p {
+            color: #b8c4cc;
+        }
+
+        .year {
+            color: #0092d9;
+            font-size: 14px;
+        }
+
+        /* CONTACTS */
+        .contact-container {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-container p {
+            color: #b8c4cc;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .contact-card {
+            background: #20313e;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            border: 1px solid #0092d9;
+            transform: translateY(-4px);
+        }
+
+        .contact-card h3 {
+            color: #0092d9;
+            margin-bottom: 5px;
+        }
+
+        .contact-card a {
+            color: #b8c4cc;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            color: #0092d9;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #101820;
+            color: #b8c4cc;
+            border-top: 1px solid #263746;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px 5%;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+                font-size: 12px;
+            }
+
+            section {
+                padding: 100px 6%;
+            }
+
+            #about {
+                flex-direction: column-reverse;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .about-text h1 {
+                font-size: 35px;
+            }
+
+            .about-image img {
+                width: 230px;
+                height: 260px;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="logo">MY PORTFOLIO.</div>
+
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#contacts">Contacts</a>
+        </nav>
+    </header>
+
+    <!-- ABOUT ME -->
+    <section id="about">
+
+        <div class="about-text">
+            <h4>Hello, I'm</h4>
+            <h1>Zyckhie Lee B. Dueñas</h1>
+            <h2>IS Student</h2>
+
+            <p>
+                Welcome to my personal portfolio! I am a college student
+                passionate about technology, creativity, and continuous
+                learning. I enjoy exploring new ideas, improving my
+                abilities, and developing skills that will help me
+                grow personally and professionally.
+            </p>
+
+            <a href="#contacts" class="btn">Contact Me</a>
+        </div>
+
+        <div class="about-image">
+            <!-- ADD YOUR PROFILE IMAGE SOURCE HERE -->
+            <img src="YOUR_PROFILE_IMAGE_SOURCE" alt="My Profile">
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h1 class="section-title">My <span>Skills</span></h1>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Creating and structuring web pages.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Designing and styling websites.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Communication</h3>
+                <p>Expressing ideas clearly and effectively.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Problem Solving</h3>
+                <p>Analyzing challenges and finding solutions.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Teamwork</h3>
+                <p>Working and collaborating with others.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Creativity</h3>
+                <p>Creating innovative ideas and designs.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <h1 class="section-title">My <span>Education</span></h1>
+
+        <div class="education-container">
+
+            <div class="education-card">
+                <span class="year">2025 - Present</span>
+                <h3>College</h3>
+                <br>
+                <p>📚BS Information Systems</p>
+                <br>
+                <p>🏫Dr. Filemon C. Aguilar Memorial College</p>
+            </div>
+
+            <div class="education-card">
+                <span class="year">2025</span>
+                <h3>Senior High School</h3>
+                <br>
+                <p>🎓Industrial Arts in Electrical Installation and Maintenance</p>
+                <br>
+                <p>🏫Las Piñas Technical Vocational High School</p>
+            </div>
+
+            <div class="education-card">
+                <span class="year">Year Graduated</span>
+                <br>
+                <h3>Junior High School</h3>
+                <br>
+                <p>🏫Talon Village National High School</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section id="contacts">
+
+        <h1 class="section-title">My <span>Contacts</span></h1>
+
+        <div class="contact-container">
+
+            <p>
+                Feel free to contact me through the following
+                platforms. I would be happy to connect with you!
+            </p>
+
+            <div class="contact-card">
+                <h3>Email Address</h3>
+                <a href="mailto:zyckhieduenas@gmail.com">zyckhieduenas@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Facebook</h3>
+                <a href="YOUR_FACEBOOK_LINK" target="_blank">
+                    Visit My Facebook Profile
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Contact Number</h3>
+                <p>0992 981 3520</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Your Full Name | Personal Portfolio</p>
+    </footer>
+
+</body>
+</html>
